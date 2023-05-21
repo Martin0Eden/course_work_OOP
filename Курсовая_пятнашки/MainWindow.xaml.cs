@@ -32,15 +32,25 @@ namespace Курсовая_пятнашки
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            StartGame();
-            for (int i = 0; i < game.button.GetLength(0); i++)
-            {
-                for (int j = 0; j < game.button.GetLength(1); j++)
+            
+                StartGame();
+                for (int i = 0; i < game.button.GetLength(0); i++)
                 {
-                    MainGrid.Children.Add(game.button[i, j]);
+                   
+
+                    for (int j = 0; j < game.button.GetLength(1); j++)
+                    {
+                        if (game.field[i, j] != 0)
+                        {
+                            MainGrid.Children.Add(game.button[i,j]);
+                        }
+                    }
                 }
-            }
+
+            
 
         }
+
     }
-    }
+    
+}

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Курсовая_пятнашки"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="650" Loaded="Window_Loaded">
-    <Grid x:Name="MainGrid" Background="#2A2E30">
+        Title="MainWindow" Height="650" Width="660" Loaded="Window_Loaded">
+    <Grid x:Name="MainGrid" Background="#2A2E30" Height="650" Width="650">
         
     </Grid>
 </Window>

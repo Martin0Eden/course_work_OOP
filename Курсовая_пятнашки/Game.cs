@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
@@ -54,23 +55,32 @@ namespace Курсовая_пятнашки
 
         public void buttonfill()
         {
-            double buttonSize = 150;
-            double horizontalMargin = (650 - (4 * buttonSize)) / 5; 
-            double verticalMargin = (650 - (4 * buttonSize)) / 5;
-
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    button[i, j] = new Button();
-                    button[i, j].Content = this.field[i, j];
-                    button[i, j].Width = buttonSize;
-                    button[i, j].Height = buttonSize;
-                    double leftMargin = (j + 1) * horizontalMargin + j * buttonSize;
-                    double topMargin = (i + 1) * verticalMargin + i * buttonSize;
-                    button[i, j].Margin = new System.Windows.Thickness(leftMargin, topMargin, 0, 0);
+                    if (this.field[i, j] != 0)
+                    {
+                        button[i, j] = new Button();
+                        button[i, j].Content = this.field[i, j];
+
+                        double horizontalMargin = 50 + 150 * j;
+                        double verticalMargin = 50 + 150 * i;
+
+                        button[i, j].HorizontalAlignment = HorizontalAlignment.Left;
+                        button[i, j].VerticalAlignment = VerticalAlignment.Top;
+                        button[i, j].Margin = new Thickness(horizontalMargin, verticalMargin, 0, 0);
+                        Style buttonStyle = (Style)Application.Current.Resources["button"];
+                        if (buttonStyle != null)
+                        {
+                            button[i, j].Style = buttonStyle;
+                        }
+                    }
                 }
             }
+
+
+
         }
     }
 }
