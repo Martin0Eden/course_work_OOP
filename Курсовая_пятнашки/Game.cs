@@ -15,11 +15,12 @@ namespace Курсовая_пятнашки
         public int size;
         public int[,] field;
         public Button[,] button;
+        
         public Game(int size)
         {
             this.size = size;
             field=new int[size,size];
-            button=new Button[size,size];
+            button = new Button[size, size];
         }
 
         public void fill()
@@ -78,9 +79,27 @@ namespace Курсовая_пятнашки
                     }
                 }
             }
+        }
 
+        public bool win()
+        {
+            int expectedNumber = 1;
 
+            for (int i = 0; i < this.field.GetLength(0); i++)
+            {
+                for (int j = 0; j < this.field.GetLength(1); j++)
+                {
+                    int currentNumber = this.field[i, j];
+                    if (currentNumber != expectedNumber)
+                    {
+                        if (this.field[i, j] != 0 || expectedNumber != this.field.GetLength(0) * this.field.GetLength(1))
+                            return false;
+                    }
+                    expectedNumber++;
+                }
+            }
 
+            return true;
         }
     }
 }
