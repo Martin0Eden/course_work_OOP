@@ -18,20 +18,22 @@ namespace Курсовая_пятнашки
     
     public partial class MainWindow : Window
     {
-        Game game = new Game(4);
+        Game game;
         private event Game.game StartGame;
-        public MainWindow()
+        public MainWindow(int size, int theme)
         {
+            game = new Game(size, theme);
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             StartGame += game.fill;
             StartGame += game.buttonfill;
         }
-
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
+                MessageBox.Show($"{game.theme}");
                 StartGame();
                 for (int i = 0; i < game.button.GetLength(0); i++)
                 {

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
+using System.Windows.Media;
+
 
 namespace Курсовая_пятнашки
 {
@@ -15,24 +17,27 @@ namespace Курсовая_пятнашки
         public int size;
         public int[,] field;
         public Button[,] button;
-        
-        public Game(int size)
+        public Color color = new Color();
+        public int theme;
+
+        public Game(int size, int theme)
         {
             this.size = size;
-            field=new int[size,size];
+            field = new int[size, size];
             button = new Button[size, size];
+            this.theme = theme;
         }
 
         public void fill()
         {
             Random rand = new Random();
-            List<int> nums = Enumerable.Range(0, size*size).ToList();
+            List<int> nums = Enumerable.Range(0, size * size).ToList();
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
                     int index = rand.Next(nums.Count);
-                    if (index == size * size -1)
+                    if (index == size * size - 1)
                         this.field[i, j] = 0;
                     this.field[i, j] = nums[index];
                     nums.RemoveAt(index);
@@ -51,7 +56,7 @@ namespace Курсовая_пятнашки
                     }
                 }
             }
-            (this.field[size-1, size-1], this.field[zeroi, zeroj]) = (this.field[zeroi, zeroj], this.field[3, 3]);
+            (this.field[size - 1, size - 1], this.field[zeroi, zeroj]) = (this.field[zeroi, zeroj], this.field[3, 3]);
         }
 
         public void buttonfill()
@@ -79,6 +84,11 @@ namespace Курсовая_пятнашки
                     }
                 }
             }
+        }
+
+        public void paint()
+        {
+           
         }
 
         public bool win()
