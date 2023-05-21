@@ -86,11 +86,6 @@ namespace Курсовая_пятнашки
             }
         }
 
-        public void paint()
-        {
-           
-        }
-
         public bool win()
         {
             int expectedNumber = 1;
@@ -108,7 +103,6 @@ namespace Курсовая_пятнашки
                     expectedNumber++;
                 }
             }
-
             return true;
         }
     }

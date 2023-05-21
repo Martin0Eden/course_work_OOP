@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="player.xaml.cs">
+      <DependentUpon>player.xaml</DependentUpon>
+    </Compile>
     <Compile Include="start.xaml.cs">
       <DependentUpon>start.xaml</DependentUpon>
     </Compile>
@@ -72,6 +75,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="player.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="start.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

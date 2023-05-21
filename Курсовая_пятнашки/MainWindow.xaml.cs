@@ -33,7 +33,6 @@ namespace Курсовая_пятнашки
         {
             try
             {
-                MessageBox.Show($"{game.theme}");
                 StartGame();
                 for (int i = 0; i < game.button.GetLength(0); i++)
                 {

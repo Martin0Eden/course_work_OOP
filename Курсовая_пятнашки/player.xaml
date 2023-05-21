@@ -1,0 +1,13 @@
+﻿<Window x:Class="Курсовая_пятнашки.player"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Курсовая_пятнашки"
+        mc:Ignorable="d"
+        Title="player" Background="#2A2E30" Height="650" Width="650" WindowStyle="None" >
+    <Grid >
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="41,67,41,67"/>
+
+    </Grid>
+</Window>

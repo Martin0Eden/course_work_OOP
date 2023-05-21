@@ -31,7 +31,8 @@ namespace Курсовая_пятнашки
             if(theme3.IsChecked == true)t = 2;
 
             MainWindow mainWindow = new MainWindow(4,t);
-            mainWindow.Show();
+            mainWindow.ShowDialog();
+            this.Visibility = Visibility.Collapsed;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -39,8 +40,9 @@ namespace Курсовая_пятнашки
             if (theme1.IsChecked == true) t = 0;
             if (theme2.IsChecked == true) t = 1;
             if (theme3.IsChecked == true) t = 2;
-            MainWindow mainWindow = new MainWindow(3, t);
-            mainWindow.Show();
+            MainWindow mainWindow = new MainWindow(3, t); 
+            mainWindow.ShowDialog();
+            this.Visibility = Visibility.Collapsed;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -49,7 +51,14 @@ namespace Курсовая_пятнашки
             if (theme2.IsChecked == true) t = 1;
             if (theme3.IsChecked == true) t = 2;
             MainWindow mainWindow = new MainWindow(5, t);
-            mainWindow.Show();
+            mainWindow.ShowDialog(); 
+            this.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            player player = new player();
+            player.Show();
         }
     }
 }
