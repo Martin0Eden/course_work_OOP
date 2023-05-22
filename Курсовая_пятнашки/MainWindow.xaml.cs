@@ -26,11 +26,15 @@ namespace Курсовая_пятнашки
         private int seconds;
         private DispatcherTimer Timer;
         int anime;
+        int theme1;
+        int size1;
         public MainWindow(int size, int theme, int a)
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             anime = a;
+            theme1 = theme;
+            size1= size;
             Timer = new DispatcherTimer();
             game = new Game(size, theme);
             Timer = new DispatcherTimer();
@@ -104,7 +108,17 @@ namespace Курсовая_пятнашки
                 clickedButton.SdvigAmi(game.field, row, column);
             }
             if (game.win() == true)
-                MessageBox.Show("победа");
+            {
+                game.OnVisible();
+                metod.onbut(restard, win);
+            }
+
+        }
+        private void restarding(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow mainWindow = new MainWindow(size1,theme1,anime);
+            mainWindow.Show();
 
         }
     }

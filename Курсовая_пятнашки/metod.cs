@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace Курсовая_пятнашки
 {
@@ -26,6 +28,17 @@ namespace Курсовая_пятнашки
                 return 4;
 
             return 0;
+        }
+
+        public static void onbut(Button b, Label l)
+        {
+            DoubleAnimation btn = new DoubleAnimation();
+            btn.From = 0;
+            btn.To = 1;
+            btn.Duration = TimeSpan.FromSeconds(3);
+            l.BeginAnimation(Label.OpacityProperty, btn);
+            b.BeginAnimation(Button.OpacityProperty, btn);
+
         }
     }
 }

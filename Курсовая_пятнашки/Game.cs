@@ -151,8 +151,20 @@ namespace Курсовая_пятнашки
                 }
                 n++;
             }
-
-
+        }
+        public void OnVisible()
+        {
+            DoubleAnimation btn = new DoubleAnimation();
+            btn.From = 1;
+            btn.To = 0;
+            btn.Duration = TimeSpan.FromSeconds(1.5);
+            for (int i = 0; i < this.button.GetLength(0); i++)
+            {
+                for (int j = 0; j < this.button.GetLength(1); j++)
+                {
+                    this.button[i, j].BeginAnimation(Button.OpacityProperty, btn);
+                }
+            }
         }
     }
 }
