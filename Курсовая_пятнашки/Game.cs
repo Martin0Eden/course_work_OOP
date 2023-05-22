@@ -56,35 +56,40 @@ namespace Курсовая_пятнашки
                     }
                 }
             }
-            (this.field[size - 1, size - 1], this.field[zeroi, zeroj]) = (this.field[zeroi, zeroj], this.field[3, 3]);
+            (this.field[size - 1, size - 1], this.field[zeroi, zeroj]) = (this.field[zeroi, zeroj], this.field[size - 1, size - 1]);
         }
 
         public void buttonfill()
         {
+            double windowSize = 650;
+            double buttonMargin = 10;
+            double buttonSize = (windowSize - (size + 1) * buttonMargin) / (size + 0.5);
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    if (this.field[i, j] != 0)
+                    button[i, j] = new Button();
+                    button[i, j].Content = this.field[i, j];
+
+                    double horizontalMargin = buttonMargin + 0.3 * buttonSize + (buttonSize + buttonMargin) * j;
+                    double verticalMargin = buttonMargin + 0.3 * buttonSize + (buttonSize + buttonMargin) * i;
+
+                    button[i, j].Width = buttonSize;
+                    button[i, j].Height = buttonSize;
+                    button[i, j].HorizontalAlignment = HorizontalAlignment.Left;
+                    button[i, j].VerticalAlignment = VerticalAlignment.Top;
+                    button[i, j].Margin = new Thickness(horizontalMargin, verticalMargin, 0, 0);
+                    Style buttonStyle = (Style)Application.Current.Resources["button"];
+                    if (buttonStyle != null)
                     {
-                        button[i, j] = new Button();
-                        button[i, j].Content = this.field[i, j];
-
-                        double horizontalMargin = 50 + 150 * j;
-                        double verticalMargin = 50 + 150 * i;
-
-                        button[i, j].HorizontalAlignment = HorizontalAlignment.Left;
-                        button[i, j].VerticalAlignment = VerticalAlignment.Top;
-                        button[i, j].Margin = new Thickness(horizontalMargin, verticalMargin, 0, 0);
-                        Style buttonStyle = (Style)Application.Current.Resources["button"];
-                        if (buttonStyle != null)
-                        {
-                            button[i, j].Style = buttonStyle;
-                        }
+                        button[i, j].Style = buttonStyle;
                     }
                 }
             }
+
         }
+
+
 
         public bool win()
         {

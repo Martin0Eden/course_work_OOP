@@ -26,9 +26,8 @@ namespace Курсовая_пятнашки
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            сolor color = new сolor("color");
-            color.type = "theme1";
-            DataTable data1 = new DataTable();
+            сolor color = new сolor("theme1");
+            DataTable data1;
             data1=color.fill();
             data.ItemsSource = data1.DefaultView;
 
