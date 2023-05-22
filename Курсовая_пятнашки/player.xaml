@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="player" Background="#2A2E30" Height="650" Width="650" WindowStyle="None" >
     <Grid >
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="41,67,41,67"/>
+        <DataGrid x:Name="data" Margin="41,67,41,67"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="462,608,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Window>

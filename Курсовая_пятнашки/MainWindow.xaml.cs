@@ -27,6 +27,7 @@ namespace Курсовая_пятнашки
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             StartGame += game.fill;
             StartGame += game.buttonfill;
+            StartGame += game.paint;
         }
         
         private void Window_Loaded(object sender, RoutedEventArgs e)

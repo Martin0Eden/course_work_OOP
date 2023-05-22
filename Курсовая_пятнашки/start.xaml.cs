@@ -60,5 +60,20 @@ namespace Курсовая_пятнашки
             player player = new player();
             player.Show();
         }
+
+        private void theme1_Checked(object sender, RoutedEventArgs e)
+        {
+            сolor.cmena("#dda800",three,four,five);
+        }
+
+        private void theme2_Checked(object sender, RoutedEventArgs e)
+        {
+            сolor.cmena("#7d0f70", three, four, five);
+        }
+
+        private void theme3_Checked(object sender, RoutedEventArgs e)
+        {
+            сolor.cmena("#85cd23", three, four, five);
+        }
     }
 }

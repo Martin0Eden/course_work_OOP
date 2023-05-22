@@ -55,9 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="database.cs" />
     <Compile Include="player.xaml.cs">
       <DependentUpon>player.xaml</DependentUpon>
     </Compile>
+    <Compile Include="sql.cs" />
     <Compile Include="start.xaml.cs">
       <DependentUpon>start.xaml</DependentUpon>
     </Compile>
