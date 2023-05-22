@@ -80,26 +80,31 @@ namespace Курсовая_пятнашки
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             player player = new player();
-            player.Show();
+            this.Visibility = Visibility.Collapsed;
+            player.ShowDialog();
+        }
+        private void close_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
         private void theme1_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#dda800",three,four,five,lider);
+            сolor.cmena("#dda800",close, three,four,five,lider);
         }
 
         private void theme2_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#7d0f70", three, four, five, lider);
+            сolor.cmena("#7d0f70", close, three, four, five, lider);
         }
 
         private void theme3_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#85cd23", three, four, five, lider);
+            сolor.cmena("#85cd23", close, three, four, five, lider);
         }
         private void theme4_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#9535ca", three, four, five, lider);
+            сolor.cmena("#9535ca", close, three, four, five, lider);
         }
     }
 }

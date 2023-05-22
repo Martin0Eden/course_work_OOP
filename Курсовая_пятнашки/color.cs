@@ -29,14 +29,21 @@ namespace Курсовая_пятнашки
 
         }
 
-        public static void cmena(string s, params Button[] buttons)
+        public static void cmena(string s, Label l, params Button[] buttons)
         {
-            for(int i=0; i<buttons.Length; i++)
+            l.Foreground = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(
+                                s));
+            for (int i=0; i<buttons.Length; i++)
                 buttons[i].Background = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(
                                 s));
         }
 
+        public static void cmena(string s, params Label[] l)
+        {
+            for(int i=0; i<l.Length; i++)
+            l[i].Foreground = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(
+                                s));
+        }
 
-       
     }
 }

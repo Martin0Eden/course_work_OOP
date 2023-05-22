@@ -21,6 +21,7 @@ namespace Курсовая_пятнашки
         public player()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

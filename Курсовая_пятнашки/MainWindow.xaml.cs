@@ -28,15 +28,15 @@ namespace Курсовая_пятнашки
         int anime;
         public MainWindow(int size, int theme, int a)
         {
+            InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             anime = a;
             Timer = new DispatcherTimer();
             game = new Game(size, theme);
-            InitializeComponent();
             Timer = new DispatcherTimer();
             Timer.Interval = TimeSpan.FromSeconds(1); 
             Timer.Tick += timer_Tick;
             Timer.Start();
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             StartGame += game.fill;
             StartGame += game.buttonfill;
             StartGame += game.paint;
@@ -54,9 +54,9 @@ namespace Курсовая_пятнашки
             timerLabel.Content = $"{minutes:D2}:{seconds:D2}";
         }
 
-        private void timer_animation(object sender, EventArgs e)
+        private void close_MouseLeftButtonUp(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
