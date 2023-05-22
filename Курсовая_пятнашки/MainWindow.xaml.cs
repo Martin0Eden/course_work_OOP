@@ -114,35 +114,37 @@ namespace Курсовая_пятнашки
         {
             double x = s.Margin.Left;
             double y = s.Margin.Top;
+            double shift = s.Width + 10;
+
             switch (metod.HasNeighborZero(mas, i, j))
             {
                 case 1:
                     {
                         (mas[i - 1, j], mas[i, j]) = (mas[i, j], mas[i - 1, j]);
-                        s.Margin = new Thickness(x, y - 150, 0, 0);
+                        s.Margin = new Thickness(x, y - shift, 0, 0);
                     }
                     break;
                 case 2:
                     {
                         (mas[i + 1, j], mas[i, j]) = (mas[i, j], mas[i + 1, j]);
-                        s.Margin = new Thickness(x, y + 150, 0, 0);
+                        s.Margin = new Thickness(x, y + shift, 0, 0);
                     }
                     break;
                 case 3:
                     {
                         (mas[i, j + 1], mas[i, j]) = (mas[i, j], mas[i, j + 1]);
-                        s.Margin = new Thickness(x + 150, y, 0, 0);
+                        s.Margin = new Thickness(x + shift, y, 0, 0);
                     }
                     break;
                 case 4:
                     {
                         (mas[i, j - 1], mas[i, j]) = (mas[i, j], mas[i, j - 1]);
-                        s.Margin = new Thickness(x - 150, y, 0, 0);
+                        s.Margin = new Thickness(x - shift, y, 0, 0);
                     }
                     break;
             }
-
         }
+
 
         public static void SdvigAmi(this Button s, int[,] mas, int i, int j)
         {
@@ -150,6 +152,7 @@ namespace Курсовая_пятнашки
             {
                 double x = s.Margin.Left;
                 double y = s.Margin.Top;
+                double shift = s.Width + 10;
                 double targetX = x;
                 double targetY = y;
 
@@ -158,25 +161,25 @@ namespace Курсовая_пятнашки
                     case 1:
                         {
                             (mas[i - 1, j], mas[i, j]) = (mas[i, j], mas[i - 1, j]);
-                            targetY -= 150;
+                            targetY -= shift;
                         }
                         break;
                     case 2:
                         {
                             (mas[i + 1, j], mas[i, j]) = (mas[i, j], mas[i + 1, j]);
-                            targetY += 150;
+                            targetY += shift;
                         }
                         break;
                     case 3:
                         {
                             (mas[i, j + 1], mas[i, j]) = (mas[i, j], mas[i, j + 1]);
-                            targetX += 150;
+                            targetX += shift;
                         }
                         break;
                     case 4:
                         {
                             (mas[i, j - 1], mas[i, j]) = (mas[i, j], mas[i, j - 1]);
-                            targetX -= 150;
+                            targetX -= shift;
                         }
                         break;
                 }
@@ -205,6 +208,7 @@ namespace Курсовая_пятнашки
             }
             catch { }
         }
+
 
 
 
