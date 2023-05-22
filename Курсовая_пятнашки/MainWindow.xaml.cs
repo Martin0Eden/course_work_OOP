@@ -120,7 +120,7 @@ namespace Курсовая_пятнашки
         }
         private void restarding(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            this.Visibility= Visibility.Collapsed;
             MainWindow mainWindow = new MainWindow(size1,theme1,anime);
             mainWindow.Show();
 
