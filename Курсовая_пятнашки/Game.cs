@@ -123,7 +123,7 @@ namespace Курсовая_пятнашки
                 DataTable d = color.fill();
                 int k = 0;
             int n =0;
-            while (n<(this.size*this.size)/2+2)
+            while (n<this.size*this.size)
             {
                 for (int i = 0; i < this.button.GetLength(0); i++)
                 {

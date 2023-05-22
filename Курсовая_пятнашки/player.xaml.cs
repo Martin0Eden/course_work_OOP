@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace Курсовая_пятнашки
 {
-    /// <summary>
-    /// Логика взаимодействия для player.xaml
-    /// </summary>
+    
     public partial class player : Window
     {
         public player()

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using System.Windows.Media.Animation;
 
 namespace Курсовая_пятнашки
 {
@@ -20,16 +22,45 @@ namespace Курсовая_пятнашки
     {
         Game game;
         private event Game.game StartGame;
+        private int minutes;
+        private int seconds;
+        private DispatcherTimer timer;
         public MainWindow(int size, int theme)
         {
+            timer = timer = new DispatcherTimer();
             game = new Game(size, theme);
             InitializeComponent();
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1); // Интервал в 1 секунду
+            timer.Tick += timer_Tick;
+            timer.Start();
+            DispatcherTimer ani = new DispatcherTimer();
+            ani.Interval = TimeSpan.FromSeconds(1); // Интервал в 1 секунду
+            ani.Tick += timer_Tick;
+            ani.Start();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             StartGame += game.fill;
             StartGame += game.buttonfill;
             StartGame += game.paint;
         }
-        
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            if (seconds == 60)
+            {
+                minutes++;
+                seconds = 0;
+            }
+
+            timerLabel.Content = $"{minutes:D2}:{seconds:D2}";
+        }
+
+        private void timer_animation(object sender, EventArgs e)
+        {
+           
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
@@ -72,36 +103,34 @@ namespace Курсовая_пятнашки
             {
                 double x = s.Margin.Left;
                 double y = s.Margin.Top;
-                if (metod.HasNeighborZero(mas, i, j) == 3)
+                switch(metod.HasNeighborZero(mas, i, j))
                 {
-                    (mas[i, j + 1], mas[i, j]) = (mas[i, j], mas[i, j + 1]);
-                    s.Margin = new Thickness(x + 150, y, 0, 0);
-                }
-                else
-                {
-                    if (metod.HasNeighborZero(mas, i, j) == 2)
-                    {
-                        (mas[i + 1, j], mas[i, j]) = (mas[i, j], mas[i + 1, j]);
-                        s.Margin = new Thickness(x, y + 150, 0, 0);
-                    }
-                    else
-                    {
-                        if (metod.HasNeighborZero(mas, i, j) == 4)
+                    case 1:
+                        {
+                            (mas[i - 1, j], mas[i, j]) = (mas[i, j], mas[i - 1, j]);
+                            s.Margin = new Thickness(x, y - 150, 0, 0);
+                        }
+                        break;
+                    case 2: 
+                        {
+                            (mas[i + 1, j], mas[i, j]) = (mas[i, j], mas[i + 1, j]);
+                            s.Margin = new Thickness(x, y + 150, 0, 0);
+                        }
+                        break;
+                    case 3:
+                        {
+                            (mas[i, j + 1], mas[i, j]) = (mas[i, j], mas[i, j + 1]);
+                            s.Margin = new Thickness(x + 150, y, 0, 0);
+                        }
+                        break;
+                    case 4:
                         {
                             (mas[i, j - 1], mas[i, j]) = (mas[i, j], mas[i, j - 1]);
                             s.Margin = new Thickness(x - 150, y, 0, 0);
                         }
-                        else
-                        {
-                            if (metod.HasNeighborZero(mas, i, j) == 1)
-                            {
-                                (mas[i - 1, j], mas[i, j]) = (mas[i, j], mas[i - 1, j]);
-                                s.Margin = new Thickness(x, y - 150, 0, 0);
-                            }
-
-                        }
-                    }
+                        break;
                 }
+               
             }
             catch { }
         }
