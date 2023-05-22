@@ -155,6 +155,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="database.cs" />
+    <Compile Include="lider.cs" />
     <Compile Include="player.xaml.cs">
       <DependentUpon>player.xaml</DependentUpon>
     </Compile>

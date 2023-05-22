@@ -19,16 +19,6 @@ namespace Курсовая_пятнашки
 
         public сolor(string table) : base(table) { }
 
-        public DataTable fill()
-        {
-            string zap = $"SELECT * FROM {this.table}";
-            SqlCommand cmd = new SqlCommand(zap, this.db.getConnection());
-            adapter.SelectCommand = cmd;
-            adapter.Fill(this.dt);
-            return dt;
-
-        }
-
         public static void cmena(string s, Label l, params Button[] buttons)
         {
             l.Foreground = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(
@@ -45,7 +35,15 @@ namespace Курсовая_пятнашки
                 label.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(s));
             }
         }
+        public DataTable fill()
+        {
+            string zap = $"SELECT * FROM {this.table}";
+            SqlCommand cmd = new SqlCommand(zap, this.db.getConnection());
+            adapter.SelectCommand = cmd;
+            adapter.Fill(this.dt);
+            return dt;
 
+        }
 
     }
 }

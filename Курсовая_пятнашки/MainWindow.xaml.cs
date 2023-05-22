@@ -28,6 +28,7 @@ namespace Курсовая_пятнашки
         int anime;
         int theme1;
         int size1;
+        TimeSpan time = TimeSpan.Parse("00:00:00");
         public MainWindow(int size, int theme, int a)
         {
             InitializeComponent();
@@ -111,6 +112,9 @@ namespace Курсовая_пятнашки
             {
                 game.OnVisible();
                 metod.onbut(restard, win);
+                time = TimeSpan.Parse($"00:{timerLabel.Content}");
+                lider lider = new lider("player","user","", time);
+                lider.ExecuteInsertQuery();
             }
 
         }

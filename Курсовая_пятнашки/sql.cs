@@ -37,5 +37,6 @@ namespace Курсовая_пятнашки
             adapter.Fill(this.dt);
         }
 
+
     }
 }

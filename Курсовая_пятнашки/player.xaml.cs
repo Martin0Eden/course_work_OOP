@@ -24,11 +24,11 @@ namespace Курсовая_пятнашки
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            сolor color = new сolor("theme1");
+            lider lider = new lider("player");
             DataTable data1;
-            data1=color.fill();
+            data1 = lider.fill();
             data.ItemsSource = data1.DefaultView;
 
         }
@@ -43,5 +43,7 @@ namespace Курсовая_пятнашки
             this.Visibility = Visibility.Collapsed;
             player.ShowDialog();
         }
+
+
     }
 }
