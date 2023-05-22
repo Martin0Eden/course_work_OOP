@@ -106,24 +106,27 @@ namespace Курсовая_пятнашки
             return true;
         }
 
-        public void paint ()
+        public void paint()
         {
             switch (this.theme)
-                {
-                    case 0:
-                        color = new сolor("theme1");
-                        break;
-                    case 1:
-                        color = new сolor("theme2");
-                        break;
-                    case 2:
-                        color = new сolor("theme3");
-                        break;
-                }
-                DataTable d = color.fill();
-                int k = 0;
-            int n =0;
-            while (n<this.size*this.size)
+            {
+                case 0:
+                    color = new сolor("theme1");
+                    break;
+                case 1:
+                    color = new сolor("theme2");
+                    break;
+                case 2:
+                    color = new сolor("theme3");
+                    break;
+                case 3:
+                    color = new сolor("theme4");
+                    break;
+            }
+            DataTable d = color.fill();
+            int k = 0;
+            int n = 0;
+            while (n < this.size * this.size)
             {
                 for (int i = 0; i < this.button.GetLength(0); i++)
                 {

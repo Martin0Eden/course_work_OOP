@@ -17,27 +17,25 @@ using System.Windows.Media.Animation;
 
 namespace Курсовая_пятнашки
 {
-    
+
     public partial class MainWindow : Window
     {
         Game game;
         private event Game.game StartGame;
         private int minutes;
         private int seconds;
-        private DispatcherTimer timer;
-        public MainWindow(int size, int theme)
+        private DispatcherTimer Timer;
+        int anime;
+        public MainWindow(int size, int theme, int a)
         {
-            timer = timer = new DispatcherTimer();
+            anime = a;
+            Timer = new DispatcherTimer();
             game = new Game(size, theme);
             InitializeComponent();
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1); // Интервал в 1 секунду
-            timer.Tick += timer_Tick;
-            timer.Start();
-            DispatcherTimer ani = new DispatcherTimer();
-            ani.Interval = TimeSpan.FromSeconds(1); // Интервал в 1 секунду
-            ani.Tick += timer_Tick;
-            ani.Start();
+            Timer = new DispatcherTimer();
+            Timer.Interval = TimeSpan.FromSeconds(1); 
+            Timer.Tick += timer_Tick;
+            Timer.Start();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             StartGame += game.fill;
             StartGame += game.buttonfill;
@@ -58,7 +56,7 @@ namespace Курсовая_пятнашки
 
         private void timer_animation(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -74,7 +72,7 @@ namespace Курсовая_пятнашки
                     {
                         if (game.field[i, j] != 0)
                         {
-                            game.button[i,j].Click+=buuton_click;
+                            game.button[i, j].Click += buuton_click;
                             MainGrid.Children.Add(game.button[i, j]);
                         }
                     }
@@ -89,7 +87,14 @@ namespace Курсовая_пятнашки
             int row = 0;
             int column = 0;
             clickedButton.serch(game.field, ref row, ref column);
-            clickedButton.sdvig(game.field, row, column);
+            if (anime == 1)
+            {
+                clickedButton.Sdvig(game.field, row, column);
+            }
+            else
+            {
+                clickedButton.SdvigAmi(game.field, row, column);
+            }
             if (game.win() == true)
                 MessageBox.Show("победа");
 
@@ -97,43 +102,102 @@ namespace Курсовая_пятнашки
     }
     public static class ButtonH
     {
-        public static void sdvig(this Button s, int[,] mas, int i, int j)
+        public static void Sdvig(this Button s, int[,] mas, int i, int j)
+        {
+            double x = s.Margin.Left;
+            double y = s.Margin.Top;
+            switch (metod.HasNeighborZero(mas, i, j))
+            {
+                case 1:
+                    {
+                        (mas[i - 1, j], mas[i, j]) = (mas[i, j], mas[i - 1, j]);
+                        s.Margin = new Thickness(x, y - 150, 0, 0);
+                    }
+                    break;
+                case 2:
+                    {
+                        (mas[i + 1, j], mas[i, j]) = (mas[i, j], mas[i + 1, j]);
+                        s.Margin = new Thickness(x, y + 150, 0, 0);
+                    }
+                    break;
+                case 3:
+                    {
+                        (mas[i, j + 1], mas[i, j]) = (mas[i, j], mas[i, j + 1]);
+                        s.Margin = new Thickness(x + 150, y, 0, 0);
+                    }
+                    break;
+                case 4:
+                    {
+                        (mas[i, j - 1], mas[i, j]) = (mas[i, j], mas[i, j - 1]);
+                        s.Margin = new Thickness(x - 150, y, 0, 0);
+                    }
+                    break;
+            }
+
+        }
+
+        public static void SdvigAmi(this Button s, int[,] mas, int i, int j)
         {
             try
             {
                 double x = s.Margin.Left;
                 double y = s.Margin.Top;
-                switch(metod.HasNeighborZero(mas, i, j))
+                double targetX = x;
+                double targetY = y;
+
+                switch (metod.HasNeighborZero(mas, i, j))
                 {
                     case 1:
                         {
                             (mas[i - 1, j], mas[i, j]) = (mas[i, j], mas[i - 1, j]);
-                            s.Margin = new Thickness(x, y - 150, 0, 0);
+                            targetY -= 150;
                         }
                         break;
-                    case 2: 
+                    case 2:
                         {
                             (mas[i + 1, j], mas[i, j]) = (mas[i, j], mas[i + 1, j]);
-                            s.Margin = new Thickness(x, y + 150, 0, 0);
+                            targetY += 150;
                         }
                         break;
                     case 3:
                         {
                             (mas[i, j + 1], mas[i, j]) = (mas[i, j], mas[i, j + 1]);
-                            s.Margin = new Thickness(x + 150, y, 0, 0);
+                            targetX += 150;
                         }
                         break;
                     case 4:
                         {
                             (mas[i, j - 1], mas[i, j]) = (mas[i, j], mas[i, j - 1]);
-                            s.Margin = new Thickness(x - 150, y, 0, 0);
+                            targetX -= 150;
                         }
                         break;
                 }
-               
+
+                double step = 25;
+
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromMilliseconds(5);
+                timer.Tick += (sender, e) =>
+                {
+                    double stepX = (targetX - x) / step;
+                    double stepY = (targetY - y) / step;
+                    x += stepX;
+                    y += stepY;
+                    s.Margin = new Thickness(x, y, 0, 0);
+
+                    step--;
+
+                    if (step <= 0)
+                    {
+                        timer.Stop();
+                    }
+                };
+
+                timer.Start();
             }
             catch { }
         }
+
 
 
         public static void serch(this Button s, int[,] mas, ref int i, ref int j)

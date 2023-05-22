@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Курсовая_пятнашки
 {
@@ -22,35 +23,53 @@ namespace Курсовая_пятнашки
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-           
         }
+        int a;
         int t = 0;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (anime.IsChecked == true)
+            {
+                a = 0;
+            }
+            else a = 1;
+
             if (theme1.IsChecked == true) t = 0;
             if (theme2.IsChecked == true) t = 1;
             if (theme3.IsChecked == true) t = 2;
-            MainWindow mainWindow = new MainWindow(4,t);
+            MainWindow mainWindow = new MainWindow(4,t,a);
             this.Visibility = Visibility.Collapsed;
             mainWindow.ShowDialog();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (anime.IsChecked == true)
+            {
+                a = 0;
+            }
+            else a = 1;
+
             if (theme1.IsChecked == true) t = 0;
             if (theme2.IsChecked == true) t = 1;
             if (theme3.IsChecked == true) t = 2;
-            MainWindow mainWindow = new MainWindow(3, t);
+            MainWindow mainWindow = new MainWindow(3, t, a);
             this.Visibility = Visibility.Collapsed;
             mainWindow.ShowDialog();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            if (anime.IsChecked == true)
+            {
+                a = 0;
+            }
+            else a = 1;
+
             if (theme1.IsChecked == true) t = 0;
             if (theme2.IsChecked == true) t = 1;
             if (theme3.IsChecked == true) t = 2;
-            MainWindow mainWindow = new MainWindow(5, t);
+            MainWindow mainWindow = new MainWindow(5, t, a);
             this.Visibility = Visibility.Collapsed;
             mainWindow.ShowDialog();
         }
@@ -72,6 +91,10 @@ namespace Курсовая_пятнашки
         }
 
         private void theme3_Checked(object sender, RoutedEventArgs e)
+        {
+            сolor.cmena("#85cd23", three, four, five, lider);
+        }
+        private void theme4_Checked(object sender, RoutedEventArgs e)
         {
             сolor.cmena("#85cd23", three, four, five, lider);
         }
