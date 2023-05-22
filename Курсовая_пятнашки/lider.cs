@@ -47,7 +47,7 @@ namespace Курсовая_пятнашки
             }
         }
 
-        public DataTable fill()
+        public override DataTable fill()
         {
             string zap = $"select * from " + table;
             SqlCommand cmd = new SqlCommand(zap, db.getConnection());

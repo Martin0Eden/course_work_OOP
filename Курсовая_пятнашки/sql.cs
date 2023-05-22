@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Курсовая_пятнашки
 {
-    internal class sql
+    internal abstract class sql
     {
         public database db = new database();
         public SqlDataAdapter adapter = new SqlDataAdapter();
@@ -29,13 +29,7 @@ namespace Курсовая_пятнашки
             return this.dt.Rows.Count;
         }
 
-        public virtual void fill()
-        {
-            string zap = $"select * from {this.table}";
-            SqlCommand cmd = new SqlCommand(zap, this.db.getConnection());
-            adapter.SelectCommand = cmd;
-            adapter.Fill(this.dt);
-        }
+        public abstract DataTable fill();
 
 
     }

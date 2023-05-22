@@ -11,7 +11,7 @@ using System.Data;
 
 namespace Курсовая_пятнашки
 {
-    internal class Game
+    internal class Game: InterfaceGame
     {
         public delegate void game();
         public int size;
@@ -89,8 +89,6 @@ namespace Курсовая_пятнашки
 
         }
 
-
-
         public bool win()
         {
             int expectedNumber = 1;
@@ -152,6 +150,7 @@ namespace Курсовая_пятнашки
                 n++;
             }
         }
+
         public void OnVisible()
         {
             DoubleAnimation btn = new DoubleAnimation();

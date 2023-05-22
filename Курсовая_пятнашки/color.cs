@@ -35,7 +35,7 @@ namespace Курсовая_пятнашки
                 label.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(s));
             }
         }
-        public DataTable fill()
+        public override DataTable fill()
         {
             string zap = $"SELECT * FROM {this.table}";
             SqlCommand cmd = new SqlCommand(zap, this.db.getConnection());
