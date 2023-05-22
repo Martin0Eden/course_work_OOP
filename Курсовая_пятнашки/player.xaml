@@ -23,6 +23,17 @@
         <Grid >
             <DataGrid x:Name="data" Margin="41,67,41,67"/>
             <Button Content="Button" HorizontalAlignment="Left" Margin="462,608,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+            <Label x:Name="nazad" Content="^" Foreground="White" FontSize="40" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Height="44" Width="34" RenderTransformOrigin="0.5,0.5" MouseLeftButtonUp="nazad_MouseLeftButtonUp">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-91.871"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="close" Content="X" Foreground="White" FontSize="30" HorizontalAlignment="Left" Margin="625,-5,0,0" VerticalAlignment="Top" Height="44" Width="34" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
 
         </Grid>
     </Border>

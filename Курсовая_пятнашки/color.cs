@@ -40,10 +40,12 @@ namespace Курсовая_пятнашки
 
         public static void cmena(string s, params Label[] l)
         {
-            for(int i=0; i<l.Length; i++)
-            l[i].Foreground = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(
-                                s));
+            foreach (Label label in l)
+            {
+                label.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(s));
+            }
         }
+
 
     }
 }

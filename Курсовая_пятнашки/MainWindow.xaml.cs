@@ -59,6 +59,13 @@ namespace Курсовая_пятнашки
             Application.Current.Shutdown();
         }
 
+        private void nazad_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        {
+            start player = new start();
+            this.Visibility = Visibility.Collapsed;
+            player.ShowDialog();
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
@@ -77,6 +84,7 @@ namespace Курсовая_пятнашки
                         }
                     }
                 }
+
             }
             catch (Exception ex) { }
         }

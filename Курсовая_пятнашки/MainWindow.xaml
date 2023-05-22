@@ -22,7 +22,7 @@
     <Border CornerRadius="50" Background="#2A2E30" >
         <Grid  x:Name="MainGrid" Height="650" Width="680">
             <Label x:Name="timerLabel" Content="00:00" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Foreground="White" RenderTransformOrigin="0.495,6.456"/>
-            <Label x:Name="nazad" Content="^" Foreground="#dda800" FontSize="40" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Height="44" Width="34" RenderTransformOrigin="0.5,0.5">
+            <Label x:Name="nazad" Content="^" Foreground="White" FontSize="40" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Height="44" Width="34" RenderTransformOrigin="0.5,0.5" MouseLeftButtonUp="nazad_MouseLeftButtonUp">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -32,7 +32,7 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-            <Label x:Name="close" Content="X" Foreground="#dda800" FontSize="30" HorizontalAlignment="Left" Margin="625,-5,0,0" VerticalAlignment="Top" Height="44" Width="34" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
+            <Label x:Name="close" Content="X" Foreground="White" FontSize="30" HorizontalAlignment="Left" Margin="625,-5,0,0" VerticalAlignment="Top" Height="44" Width="34" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
         </Grid>
     </Border>
 

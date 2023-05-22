@@ -33,5 +33,16 @@ namespace Курсовая_пятнашки
             data.ItemsSource = data1.DefaultView;
 
         }
+        private void close_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void nazad_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        {
+            start player = new start();
+            this.Visibility = Visibility.Collapsed;
+            player.ShowDialog();
+        }
     }
 }
