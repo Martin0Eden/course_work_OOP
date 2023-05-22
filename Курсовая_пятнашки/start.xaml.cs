@@ -37,6 +37,7 @@ namespace Курсовая_пятнашки
             if (theme1.IsChecked == true) t = 0;
             if (theme2.IsChecked == true) t = 1;
             if (theme3.IsChecked == true) t = 2;
+            if (theme4.IsChecked == true) t = 3;
             MainWindow mainWindow = new MainWindow(4,t,a);
             this.Visibility = Visibility.Collapsed;
             mainWindow.ShowDialog();
@@ -53,6 +54,7 @@ namespace Курсовая_пятнашки
             if (theme1.IsChecked == true) t = 0;
             if (theme2.IsChecked == true) t = 1;
             if (theme3.IsChecked == true) t = 2;
+            if (theme4.IsChecked == true) t = 3;
             MainWindow mainWindow = new MainWindow(3, t, a);
             this.Visibility = Visibility.Collapsed;
             mainWindow.ShowDialog();
@@ -69,6 +71,7 @@ namespace Курсовая_пятнашки
             if (theme1.IsChecked == true) t = 0;
             if (theme2.IsChecked == true) t = 1;
             if (theme3.IsChecked == true) t = 2;
+            if (theme4.IsChecked == true) t = 3;
             MainWindow mainWindow = new MainWindow(5, t, a);
             this.Visibility = Visibility.Collapsed;
             mainWindow.ShowDialog();
@@ -96,7 +99,7 @@ namespace Курсовая_пятнашки
         }
         private void theme4_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#85cd23", three, four, five, lider);
+            сolor.cmena("#9535ca", three, four, five, lider);
         }
     }
 }

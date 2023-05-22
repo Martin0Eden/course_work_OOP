@@ -32,8 +32,8 @@
             <RadioButton x:Name="theme3" Background="#85cd23" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="401,477,0,0" VerticalAlignment="Top" Checked="theme3_Checked"/>
             <Label Content=" выберите  тему" Foreground="White" FontSize="20" HorizontalAlignment="Center" Margin="0,402,0,0" VerticalAlignment="Top"/>
             <Button x:Name="lider" Content="таблица лидеров" Style="{StaticResource button}" Background="#dda800" HorizontalAlignment="Center" Height="50" Width="120" Margin="0,535,0,0" VerticalAlignment="Top" Click="Button_Click_3" HorizontalContentAlignment="Center" Foreground="Black"/>
-            <RadioButton x:Name="theme4" Background="#85cd23" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="551,477,0,0" VerticalAlignment="Top" Checked="theme4_Checked"/>
-            <CheckBox x:Name="anime" Content="Анимация" HorizontalAlignment="Left" Margin="551,94,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="theme4" Background="#9535ca" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="551,477,0,0" VerticalAlignment="Top" Checked="theme4_Checked"/>
+            <CheckBox x:Name="anime" FontSize="15" Foreground="White" Content="Анимация" HorizontalAlignment="Left" Margin="31,593,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Border>
 </Window>
