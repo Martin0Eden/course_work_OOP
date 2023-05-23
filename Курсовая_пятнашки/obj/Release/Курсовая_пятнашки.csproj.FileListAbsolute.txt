@@ -119,3 +119,5 @@ D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP
 D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\obj\Release\Курсовая_пятнашки.csproj.CopyComplete
 D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\obj\Release\Курсовая_пятнашки.exe
 D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\obj\Release\Курсовая_пятнашки.pdb
+D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\bin\Release\GameAt15.mdf
+D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\bin\Release\GameAt15_log.ldf

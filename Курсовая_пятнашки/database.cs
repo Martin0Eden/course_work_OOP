@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 namespace Курсовая_пятнашки
 {
     internal class database
-    {/*
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\player.mdf;Integrated Security=True");
-*/
+    {
         SqlConnection conn = new SqlConnection(@"Data Source=WIN-AG9158AOA4O;Initial Catalog=GameAt15;Integrated Security=True");
+
         public void open()
         {
             if (conn.State == System.Data.ConnectionState.Closed)

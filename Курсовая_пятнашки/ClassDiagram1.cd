@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Курсовая_пятнашки.metod">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>metod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Курсовая_пятнашки.сolor">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAABAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>color.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Курсовая_пятнашки.database">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAACAAAAAAAAQAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Курсовая_пятнашки.lider">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAIEAAAAAAgAQAAAAAA=</HashCode>
+      <FileName>lider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Курсовая_пятнашки.sql">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABABAACAAAAAAAAAAAAAAwAAAAAAAA=</HashCode>
+      <FileName>sql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Курсовая_пятнашки.Game">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Курсовая_пятнашки.Game.game" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Game.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAiAAABAABAAQAACAIAAAAAAAAAAAACIAAgAAAAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="1.366" />
+  </Class>
+  <Interface Name="Курсовая_пятнашки.InterfaceGame">
+    <Position X="6.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAQAACAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>InterfaceGame.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

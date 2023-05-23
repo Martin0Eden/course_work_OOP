@@ -113,11 +113,14 @@ namespace Курсовая_пятнашки
                 game.OnVisible();
                 metod.onbut(restard, win);
                 time = TimeSpan.Parse($"00:{timerLabel.Content}");
-                lider lider = new lider("player","user","", time);
+                lider lider = new lider("player","user",$"{game.size}:{game.size}", time);;
                 lider.ExecuteInsertQuery();
+                restard.Click += restarding;
+                Timer.Stop();
             }
 
         }
+
         private void restarding(object sender, RoutedEventArgs e)
         {
             this.Visibility= Visibility.Collapsed;
@@ -173,7 +176,7 @@ namespace Курсовая_пятнашки
                 double y = s.Margin.Top;
                 double shift = s.Width + 10;
                 ThicknessAnimation btn = new ThicknessAnimation();
-                btn.Duration = TimeSpan.FromSeconds(0.3);
+                btn.Duration = TimeSpan.FromSeconds(0.2);
 
                 switch (metod.HasNeighborZero(mas, i, j))
                 {

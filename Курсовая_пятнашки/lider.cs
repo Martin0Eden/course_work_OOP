@@ -13,10 +13,11 @@ namespace Курсовая_пятнашки
         public string name;
         public string complexity;
         public TimeSpan time;
+        public int i;
 
         public lider(string table, string name,string complexity, TimeSpan time) : base(table) 
         { 
-            this.name = name;
+            this.name = name + i.ToString();
             this.complexity = complexity;
             this.time = time;
         }
