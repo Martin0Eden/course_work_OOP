@@ -168,61 +168,52 @@ namespace Курсовая_пятнашки
         {
             try
             {
+                
                 double x = s.Margin.Left;
                 double y = s.Margin.Top;
                 double shift = s.Width + 10;
-                double targetX = x;
-                double targetY = y;
+                ThicknessAnimation btn = new ThicknessAnimation();
+                btn.Duration = TimeSpan.FromSeconds(0.3);
 
                 switch (metod.HasNeighborZero(mas, i, j))
                 {
                     case 1:
                         {
                             (mas[i - 1, j], mas[i, j]) = (mas[i, j], mas[i - 1, j]);
-                            targetY -= shift;
+                            btn.From = s.Margin;
+                            btn.To = new Thickness(s.Margin.Left, s.Margin.Top - shift, s.Margin.Right, s.Margin.Bottom);
+
+                            s.BeginAnimation(Button.MarginProperty, btn);
                         }
                         break;
                     case 2:
                         {
                             (mas[i + 1, j], mas[i, j]) = (mas[i, j], mas[i + 1, j]);
-                            targetY += shift;
+                            btn.From = s.Margin;
+                            btn.To = new Thickness(s.Margin.Left, s.Margin.Top + shift, s.Margin.Right, s.Margin.Bottom);
+
+                            s.BeginAnimation(Button.MarginProperty, btn);
+
                         }
                         break;
                     case 3:
                         {
                             (mas[i, j + 1], mas[i, j]) = (mas[i, j], mas[i, j + 1]);
-                            targetX += shift;
+                            btn.From = s.Margin;
+                            btn.To = new Thickness(s.Margin.Left+shift, s.Margin.Top, s.Margin.Right, s.Margin.Bottom);
+
+                            s.BeginAnimation(Button.MarginProperty, btn);
                         }
                         break;
                     case 4:
                         {
                             (mas[i, j - 1], mas[i, j]) = (mas[i, j], mas[i, j - 1]);
-                            targetX -= shift;
+                            btn.From = s.Margin;
+                            btn.To = new Thickness(s.Margin.Left-shift, s.Margin.Top, s.Margin.Right, s.Margin.Bottom);
+                            s.BeginAnimation(Button.MarginProperty, btn);
                         }
                         break;
                 }
-
-                double step = 25;
-
-                DispatcherTimer timer = new DispatcherTimer();
-                timer.Interval = TimeSpan.FromMilliseconds(5);
-                timer.Tick += (sender, e) =>
-                {
-                    double stepX = (targetX - x) / step;
-                    double stepY = (targetY - y) / step;
-                    x += stepX;
-                    y += stepY;
-                    s.Margin = new Thickness(x, y, 0, 0);
-
-                    step--;
-
-                    if (step <= 0)
-                    {
-                        timer.Stop();
-                    }
-                };
-
-                timer.Start();
             }
             catch { }
         }

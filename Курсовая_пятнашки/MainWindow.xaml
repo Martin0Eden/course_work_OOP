@@ -35,7 +35,7 @@
             <Label x:Name="win" Content="Поздравляю!" Opacity="0"  Foreground="White" FontSize="50" HorizontalAlignment="Center" Margin="0,222,0,0" VerticalAlignment="Top"/>
             <Button x:Name="restard" Opacity="0"  Style="{StaticResource button}"  Background="White" Content="Начать заново?" HorizontalAlignment="Center" Margin="0,325,0,0" Height="50" Width="120" VerticalAlignment="Top" Click="restarding" Foreground="Black"/>
 
-            <Label x:Name="close" Content="X" Foreground="White" FontSize="30" HorizontalAlignment="Left" Margin="625,-5,0,0" VerticalAlignment="Top" Height="44" Width="34"/>
+            <Label x:Name="close" Content="X" Foreground="White" FontSize="30" HorizontalAlignment="Left" Margin="625,-5,0,0" VerticalAlignment="Top" Height="44" Width="34" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
         </Grid>
     </Border>
 
