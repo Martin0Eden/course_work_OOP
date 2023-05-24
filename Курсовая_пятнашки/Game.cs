@@ -165,5 +165,35 @@ namespace Курсовая_пятнашки
                 }
             }
         }
+
+        public static bool IsSolvable(int[,] array)
+        {
+            int[] flattenedArray = new int[array.Length];
+            int index = 0;
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    flattenedArray[index] = array[i, j];
+                    index++;
+                }
+            }
+
+            int inversions = 0;
+
+            for (int i = 0; i < flattenedArray.Length - 1; i++)
+            {
+                for (int j = i + 1; j < flattenedArray.Length; j++)
+                {
+                    if (flattenedArray[j] > 0 && flattenedArray[i] > 0 && flattenedArray[i] > flattenedArray[j])
+                    {
+                        inversions++;
+                    }
+                }
+            }
+            return inversions % 2 == 0;
+        }
+
     }
 }

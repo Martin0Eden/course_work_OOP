@@ -75,20 +75,26 @@ namespace Курсовая_пятнашки
         {
             try
             {
-                StartGame();
-                for (int i = 0; i < game.button.GetLength(0); i++)
+                do
                 {
+                    StartGame();
+                }
+                while (Game.IsSolvable(game.field) == true);
 
-
-                    for (int j = 0; j < game.button.GetLength(1); j++)
+                for (int i = 0; i < game.button.GetLength(0); i++)
                     {
-                        if (game.field[i, j] != 0)
+
+
+                        for (int j = 0; j < game.button.GetLength(1); j++)
                         {
-                            game.button[i, j].Click += buuton_click;
-                            MainGrid.Children.Add(game.button[i, j]);
+                            if (game.field[i, j] != 0)
+                            {
+                                game.button[i, j].Click += buuton_click;
+                                MainGrid.Children.Add(game.button[i, j]);
+                            }
                         }
                     }
-                }
+                
 
             }
             catch (Exception ex) { }
@@ -115,10 +121,17 @@ namespace Курсовая_пятнашки
                 time = TimeSpan.Parse($"00:{timerLabel.Content}");
                 lider lider = new lider("player","user",$"{game.size}:{game.size}", time);;
                 lider.ExecuteInsertQuery();
+                Lider.Click += Button_Click_3;
                 restard.Click += restarding;
                 Timer.Stop();
             }
 
+        }
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            player player = new player();
+            this.Visibility = Visibility.Collapsed;
+            player.ShowDialog();
         }
 
         private void restarding(object sender, RoutedEventArgs e)
