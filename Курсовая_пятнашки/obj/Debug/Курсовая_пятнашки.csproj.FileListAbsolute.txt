@@ -282,3 +282,5 @@ D:\ВУЗ\course_work_OOP\Курсовая_пятнашки\obj\Debug\Курсо
 D:\ВУЗ\course_work_OOP\Курсовая_пятнашки\obj\Debug\Курсовая_пятнашки.csproj.CopyComplete
 D:\ВУЗ\course_work_OOP\Курсовая_пятнашки\obj\Debug\Курсовая_пятнашки.exe
 D:\ВУЗ\course_work_OOP\Курсовая_пятнашки\obj\Debug\Курсовая_пятнашки.pdb
+D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\bin\Debug\GameAt15.mdf
+D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\bin\Debug\GameAt15_log.ldf
