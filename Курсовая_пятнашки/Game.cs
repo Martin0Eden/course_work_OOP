@@ -59,7 +59,7 @@ namespace Курсовая_пятнашки
             (this.field[size - 1, size - 1], this.field[zeroi, zeroj]) = (this.field[zeroi, zeroj], this.field[size - 1, size - 1]);
         }
 
-        public void buttonfill()
+        public virtual void buttonfill()
         {
             double windowSize = 650;
             double buttonMargin = 10;
@@ -109,7 +109,7 @@ namespace Курсовая_пятнашки
             return true;
         }
 
-        public void paint()
+        public virtual void paint()
         {
             switch (this.theme)
             {
@@ -137,21 +137,21 @@ namespace Курсовая_пятнашки
                     {
                         int a = (int)d.Rows[k][1];
                         int b = (int)this.field[i, j];
-                        if (a == b)
-                        {
-                            this.button[i, j].Background = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(
+                    if (a == b)
+                    {
+                        this.button[i, j].Background = new SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(
                                 d.Rows[k][2].ToString()));
                             this.button[i, j].Foreground = Brushes.Black;
                             k++;
-                        }
-
-                    }
                 }
-                n++;
-            }
-        }
 
-        public void OnVisible()
+            }
+                }
+            n++;
+        }
+    }
+
+        public virtual void OnVisible()
         {
             DoubleAnimation btn = new DoubleAnimation();
             btn.From = 1;
