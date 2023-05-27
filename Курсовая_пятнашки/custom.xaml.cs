@@ -17,6 +17,8 @@ namespace Курсовая_пятнашки
 {
     public partial class custom : Window
     {
+        BitmapImage bitmap;
+        int size = 4;
         public custom()
         {
             InitializeComponent();
@@ -43,16 +45,24 @@ namespace Курсовая_пятнашки
             if (openFileDialog.ShowDialog() == true)
             {
                 string imagePath = openFileDialog.FileName;
-                BitmapImage bitmap = new BitmapImage();
+                bitmap = new BitmapImage();
                 bitmap.BeginInit();
                 bitmap.UriSource = new Uri(imagePath);
                 bitmap.EndInit();
                 label_img.Content = "изображение добавленно";
 
-                MessageBox.Show("все ок");
-
             }
         }
 
+        private void startgame_Click(object sender, RoutedEventArgs e)
+        {
+            if (theme1.IsChecked == true) size = 3;
+            if (theme2.IsChecked == true) size = 4;
+            if (theme3.IsChecked == true) size = 5;
+
+            BitmapSource bitmapSource = (BitmapSource)bitmap;
+            BitmapSource[,] imageParts = Game_custom.SplitImage(bitmapSource,size);
+
+        }
     }
 }
