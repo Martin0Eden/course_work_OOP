@@ -83,6 +83,15 @@ namespace Курсовая_пятнашки
             this.Visibility = Visibility.Collapsed;
             player.ShowDialog();
         }
+
+        private void custom_Click_(object sender, RoutedEventArgs e)
+        {
+            custom player = new custom();
+            this.Visibility = Visibility.Collapsed;
+            player.ShowDialog();
+        }
+        
+
         private void close_MouseLeftButtonUp(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -90,21 +99,21 @@ namespace Курсовая_пятнашки
 
         private void theme1_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#dda800",close, three,four,five,lider);
+            сolor.cmena("#dda800",close, three,four,five,lider,custom);
         }
 
         private void theme2_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#7d0f70", close, three, four, five, lider);
+            сolor.cmena("#7d0f70", close, three, four, five, lider, custom);
         }
 
         private void theme3_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#85cd23", close, three, four, five, lider);
+            сolor.cmena("#85cd23", close, three, four, five, lider, custom);
         }
         private void theme4_Checked(object sender, RoutedEventArgs e)
         {
-            сolor.cmena("#9535ca", close, three, four, five, lider);
+            сolor.cmena("#9535ca", close, three, four, five, lider, custom);
         }
     }
 }

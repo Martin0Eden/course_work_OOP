@@ -154,6 +154,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="custom.xaml.cs">
+      <DependentUpon>custom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="database.cs" />
     <Compile Include="Game_custom.cs" />
     <Compile Include="InterfaceGame.cs" />
@@ -165,6 +168,10 @@
     <Compile Include="start.xaml.cs">
       <DependentUpon>start.xaml</DependentUpon>
     </Compile>
+    <Page Include="custom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

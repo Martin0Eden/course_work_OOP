@@ -27,15 +27,16 @@
             <Button x:Name="three" Style="{StaticResource button}" Background="#dda800" Content="3х3" HorizontalAlignment="Left" Margin="90,200,0,0" VerticalAlignment="Top" Click="Button_Click_1" Foreground="Black"/>
             <Button x:Name="four" Style="{StaticResource button}" Background="#dda800" Content="4х4" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Click="Button_Click" Foreground="Black"/>
             <Button x:Name="five" Style="{StaticResource button}"  Background="#dda800" Content="5х5" HorizontalAlignment="Left" Margin="484,200,0,0" VerticalAlignment="Top" Click="Button_Click_2" Foreground="Black"/>
-            <RadioButton x:Name="theme1" Background="#dda800"  Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="101,477,0,0" VerticalAlignment="Top" Checked="theme1_Checked"/>
-            <RadioButton x:Name="theme2" Background="#7d0f70" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="251,477,0,0" VerticalAlignment="Top" Checked="theme2_Checked"/>
-            <RadioButton x:Name="theme3" Background="#85cd23" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="401,477,0,0" VerticalAlignment="Top" Checked="theme3_Checked"/>
+            <RadioButton x:Name="theme1" Background="#dda800"  Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="112,462,0,0" VerticalAlignment="Top" Checked="theme1_Checked"/>
+            <RadioButton x:Name="theme2" Background="#7d0f70" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="262,462,0,0" VerticalAlignment="Top" Checked="theme2_Checked"/>
+            <RadioButton x:Name="theme3" Background="#85cd23" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="412,462,0,0" VerticalAlignment="Top" Checked="theme3_Checked"/>
             <Label Content=" выберите  тему" Foreground="White" FontSize="20" HorizontalAlignment="Center" Margin="0,402,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="lider" Content="таблица лидеров" Style="{StaticResource button}" Background="#dda800" HorizontalAlignment="Center" Height="50" Width="120" Margin="0,535,0,0" VerticalAlignment="Top" Click="Button_Click_3" HorizontalContentAlignment="Center" Foreground="Black"/>
-            <RadioButton x:Name="theme4" Background="#9535ca" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="551,477,0,0" VerticalAlignment="Top" Checked="theme4_Checked"/>
+            <Button x:Name="lider" Content="таблица лидеров" Style="{StaticResource button}" Background="#dda800" HorizontalAlignment="Center" Height="50" Width="120" Margin="0,578,0,0" VerticalAlignment="Top" Click="Button_Click_3" HorizontalContentAlignment="Center" Foreground="Black"/>
+            <RadioButton x:Name="theme4" Background="#9535ca" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="562,462,0,0" VerticalAlignment="Top" Checked="theme4_Checked"/>
             <CheckBox x:Name="anime" FontSize="15" Foreground="White" Content="Анимация" HorizontalAlignment="Left" Margin="31,593,0,0" VerticalAlignment="Top"/>
             <Label x:Name="close" Content="X" Foreground="#dda800" FontSize="30" HorizontalAlignment="Left" Margin="624,22,0,0" VerticalAlignment="Top" Height="44" Width="34" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
-            
+            <Button x:Name="custom" Content="создать тему" Style="{StaticResource button}" Background="#dda800" HorizontalAlignment="Center" Height="50" Width="120" Margin="0,512,0,0" VerticalAlignment="Top" Click="custom_Click_" HorizontalContentAlignment="Center" Foreground="Black"/>
+
         </Grid>
     </Border>
 </Window>
