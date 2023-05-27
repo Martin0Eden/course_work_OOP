@@ -59,8 +59,6 @@ namespace Курсовая_пятнашки
                 for (int j = 0; j < size; j++)
                 {
                     button[i, j] = new Button();
-                    button[i, j].Content = this.field[i, j];
-
                     double horizontalMargin = buttonMargin + 0.3 * buttonSize + (buttonSize + buttonMargin) * j;
                     double verticalMargin = buttonMargin + 0.3 * buttonSize + (buttonSize + buttonMargin) * i;
 
@@ -69,8 +67,12 @@ namespace Курсовая_пятнашки
                     button[i, j].HorizontalAlignment = HorizontalAlignment.Left;
                     button[i, j].VerticalAlignment = VerticalAlignment.Top;
                     button[i, j].Margin = new Thickness(horizontalMargin, verticalMargin, 0, 0);
-
-                    button[i, j].Background = new ImageBrush(BitmapSources[i, j]);
+                    Style buttonStyle = (Style)Application.Current.Resources["button"];
+                    if (buttonStyle != null)
+                    {
+                        button[i, j].Style = buttonStyle;
+                    }
+                    button[i, j].Background = new ImageBrush(this.BitmapSources[i, j]);
                 }
             }
         }

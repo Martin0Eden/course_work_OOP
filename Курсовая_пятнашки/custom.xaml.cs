@@ -67,7 +67,7 @@ namespace Курсовая_пятнашки
 
                 if (imageParts != null)
                 {
-                    MainWindow_Сustom mainWindow_Custom = new MainWindow_Сustom(imageParts);
+                    MainWindow_Сustom mainWindow_Custom = new MainWindow_Сustom(imageParts,size);
                     this.Visibility = Visibility.Collapsed;
                     mainWindow_Custom.ShowDialog();
                 }

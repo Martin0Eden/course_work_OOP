@@ -7,7 +7,7 @@
         mc:Ignorable="d"
          Title="Your Window" Height="650" Width="680" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize"
-        >
+        Loaded="Window_Loaded" >
 
     <Window.Resources>
         <Style TargetType="{x:Type Window}">
@@ -37,6 +37,7 @@
                 </Label.RenderTransform>
             </Label>
             <Label x:Name="close" Content="X" Foreground="White" FontSize="30" HorizontalAlignment="Left" Margin="625,-5,0,0" VerticalAlignment="Top" Height="44" Width="34" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
+            <Label x:Name="timerLabel" Content="00:00" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Foreground="White" RenderTransformOrigin="0.495,6.456"/>
 
         </Grid>
     </Border>
