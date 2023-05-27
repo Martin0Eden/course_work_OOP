@@ -286,3 +286,5 @@ D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP
 D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\bin\Debug\GameAt15_log.ldf
 D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\obj\Debug\custom.g.cs
 D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\obj\Debug\custom.baml
+D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\obj\Debug\MainWindow_Сustom.g.cs
+D:\ВУЗ\2 курс\2 семестр\ООП\курсач\мое\course_work_OOP\Курсовая_пятнашки\obj\Debug\MainWindow_Сustom.baml

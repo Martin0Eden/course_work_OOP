@@ -1,4 +1,4 @@
-﻿<Window x:Class="Курсовая_пятнашки.custom"
+﻿<Window x:Class="Курсовая_пятнашки.MainWindow_Сustom"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -37,16 +37,6 @@
                 </Label.RenderTransform>
             </Label>
             <Label x:Name="close" Content="X" Foreground="White" FontSize="30" HorizontalAlignment="Left" Margin="625,-5,0,0" VerticalAlignment="Top" Height="44" Width="34" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
-            <Label x:Name="label_img" Content="Добавьте изображение " HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
-            <Button x:Name="insert" Content="добавить изображение" Style="{StaticResource button}" Background="White" HorizontalAlignment="Center" Height="50" Width="161" Margin="0,175,0,0" VerticalAlignment="Top" Click="dobavlenie" HorizontalContentAlignment="Center" Foreground="Black"/>
-            <Label x:Name="label_img_Copy" Content="выберите сложность " HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Foreground="White" Margin="0,288,0,0"/>
-            <RadioButton x:Name="theme1" Background="White"  Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="181,362,0,0" VerticalAlignment="Top" />
-            <RadioButton x:Name="theme2" Background="White" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="331,362,0,0" VerticalAlignment="Top" />
-            <RadioButton x:Name="theme3" Background="White" Content="" Style="{StaticResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="481,362,0,0" VerticalAlignment="Top" />
-            <Label x:Name="label_3" Content="3x3" HorizontalAlignment="Left" Margin="172,398,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
-            <Label x:Name="label_4" Content="4x4" HorizontalAlignment="Center" Margin="0,398,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
-            <Label x:Name="label_5" Content="5x5" HorizontalAlignment="Left" Margin="472,398,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
-            <Button x:Name="startgame" Content="начать" Style="{StaticResource button}" Background="White" HorizontalAlignment="Center" Height="50" Width="103" Margin="0,514,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Foreground="Black" Click="startgame_Click"/>
 
         </Grid>
     </Border>

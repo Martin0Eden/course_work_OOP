@@ -161,6 +161,9 @@
     <Compile Include="Game_custom.cs" />
     <Compile Include="InterfaceGame.cs" />
     <Compile Include="lider.cs" />
+    <Compile Include="MainWindow_Сustom.xaml.cs">
+      <DependentUpon>MainWindow_Сustom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="player.xaml.cs">
       <DependentUpon>player.xaml</DependentUpon>
     </Compile>
@@ -186,6 +189,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindow_Сustom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="player.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

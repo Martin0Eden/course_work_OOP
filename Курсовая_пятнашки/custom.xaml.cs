@@ -56,13 +56,27 @@ namespace Курсовая_пятнашки
 
         private void startgame_Click(object sender, RoutedEventArgs e)
         {
-            if (theme1.IsChecked == true) size = 3;
-            if (theme2.IsChecked == true) size = 4;
-            if (theme3.IsChecked == true) size = 5;
+            try
+            {
+                if (theme1.IsChecked == true) size = 3;
+                if (theme2.IsChecked == true) size = 4;
+                if (theme3.IsChecked == true) size = 5;
 
-            BitmapSource bitmapSource = (BitmapSource)bitmap;
-            BitmapSource[,] imageParts = Game_custom.SplitImage(bitmapSource,size);
+                BitmapSource bitmapSource = (BitmapSource)bitmap;
+                BitmapSource[,] imageParts = Game_custom.SplitImage(bitmapSource, size);
 
+                if (imageParts != null)
+                {
+                    MainWindow_Сustom mainWindow_Custom = new MainWindow_Сustom(imageParts);
+                    this.Visibility = Visibility.Collapsed;
+                    mainWindow_Custom.ShowDialog();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("файл не выбран");
+
+            }
         }
     }
 }
