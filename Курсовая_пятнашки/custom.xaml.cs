@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Курсовая_пятнашки
 {
-    /// <summary>
-    /// Логика взаимодействия для custom.xaml
-    /// </summary>
     public partial class custom : Window
     {
         public custom()
@@ -36,5 +34,25 @@ namespace Курсовая_пятнашки
             this.Visibility = Visibility.Collapsed;
             player.ShowDialog();
         }
+
+        private void dobavlenie(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string imagePath = openFileDialog.FileName;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(imagePath);
+                bitmap.EndInit();
+                label_img.Content = "изображение добавленно";
+
+                MessageBox.Show("все ок");
+
+            }
+        }
+
     }
 }
